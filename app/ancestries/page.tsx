@@ -1,8 +1,23 @@
 import { getAncestries } from "@/lib/api";
-import AncestriesClient from "./AncestriesClient";
+import SearchBar from "../SearchBar";
+import AncestryList from "./AncestryList";
 
-export default async function Page() {
-  const ancestries = await getAncestries();
+export default async function Page({ searchParams }) {
+  const params = await searchParams;
+  const q = params?.q || "";
 
-  return <AncestriesClient ancestries={ancestries} />;
+  const ancestries = await getAncestries(q);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-[#0a0f1c] to-[#05070d] text-gray-200 p-6">
+      
+      <h1 className="text-3xl font-bold mb-4 text-blue-300">
+        Ancestries
+      </h1>
+
+      <SearchBar initialValue={q} />
+
+      <AncestryList ancestries={ancestries} />
+    </div>
+  );
 }
