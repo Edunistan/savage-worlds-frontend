@@ -41,3 +41,21 @@ export async function getEdges(q, r, c) {
   const res = await fetch(url);
   return res.json();
 }
+
+export async function getHindrances(q, t) {
+  let url = `${API_URL}/hindrances`;
+
+  const params = [];
+
+  if (q) params.push(`q=${encodeURIComponent(q)}`);
+  if (t) params.push(`t=${encodeURIComponent(t)}`);
+
+  if (params.length > 0) {
+    url += `?${params.join("&")}`;
+  }
+
+  console.log("url:", url);
+
+  const res = await fetch(url);
+  return res.json();
+}

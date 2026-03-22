@@ -9,6 +9,7 @@ export default function Header() {
   const links = [
     { label: "Ancestries", href: "/ancestries" },
     { label: "Edges", href: "/edges" },
+    { label: "Hindrances", href: "/hindrances" },
   ];
 
   return (

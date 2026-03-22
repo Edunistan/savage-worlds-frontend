@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 
-type Edge = {
+type Hindrance = {
     id: number;
     name: string;
-    category: string;
-    requirements: string;
+    type: string;
     description: string;
     summary: string;
 };
 
-export default function EdgeList({ edges }: {edges: Edge[] }) {
+export default function HindranceList({ hindrances }: {hindrances: Hindrance[] }) {
     const [openId, setOpenId] = useState<number | null>(null);
     const [visibleId, setVisibleId] = useState<number | null>(null);
 
@@ -35,33 +34,27 @@ export default function EdgeList({ edges }: {edges: Edge[] }) {
 
     return (
         <div className="max-h-[75vh] overflow-y-auto pr-2 space-y-4 mt-4">
-            {edges?.map((edge) => {
-                const isOpen = openId === edge.id;
-                const isVisible = visibleId === edge.id;
+            {hindrances?.map((hindrance) => {
+                const isOpen = openId === hindrance.id;
+                const isVisible = visibleId === hindrance.id;
 
                 return (
                     <div
-                        key={edge.id}
+                        key={hindrance.id}
                         className="bg-[#0f172a] border border-blue-900/30 rounded-2xl shadow-lg overflow-hidden transition-all"
                     >
                         {/* HEADER */}
                         <div
-                        onClick={() => handleClick(edge.id)}
+                        onClick={() => handleClick(hindrance.id)}
                         className="cursor-pointer p-5 hover:bg-[#1e293b] transition-colors"
                         >
                         <div className="flex justify-between items-center">
                             <div className="flex flex-col md:flex-row md:items-center gap-2">
-                                <h2 className="text-xl font-semibold text-blue-400">{edge.name}</h2>
+                                <h2 className="text-xl font-semibold text-blue-400">{hindrance.name}</h2>
                                 
-                                {edge.requirements && (
+                                {hindrance.type && (
                                 <span className="bg-blue-800 text-xs font-medium px-2 py-0.5 rounded-full">
-                                    {edge.requirements}
-                                </span>
-                                )}
-
-                                {edge.category && (
-                                <span className="bg-red-800 text-xs font-medium px-2 py-0.5 rounded-full">
-                                    {edge.category}
+                                    {hindrance.type}
                                 </span>
                                 )}
                             </div>
@@ -78,7 +71,7 @@ export default function EdgeList({ edges }: {edges: Edge[] }) {
                         <p
                             className={`text-gray-400 transition-all duration-200`}
                         >
-                            {edge.summary}
+                            {hindrance.summary}
                         </p>
                         </div>
 
@@ -94,7 +87,7 @@ export default function EdgeList({ edges }: {edges: Edge[] }) {
                             {(
                             <>
                                 {/* FULL DESCRIPTION */}
-                                <p className="mb-4">{edge.description}</p>
+                                <p className="mb-4">{hindrance.description}</p>
 
                                 
                             </>
