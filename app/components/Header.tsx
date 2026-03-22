@@ -10,6 +10,7 @@ export default function Header() {
     { label: "Ancestries", href: "/ancestries" },
     { label: "Edges", href: "/edges" },
     { label: "Hindrances", href: "/hindrances" },
+    { label: "Skills", href: "/skills" },
   ];
 
   return (

@@ -59,3 +59,22 @@ export async function getHindrances(q, t) {
   const res = await fetch(url);
   return res.json();
 }
+
+export async function getSkills(q, l, c) {
+  let url = `${API_URL}/skills`;
+
+  const params = [];
+
+  if (q) params.push(`q=${encodeURIComponent(q)}`);
+  if (l) params.push(`l=${encodeURIComponent(l)}`);
+  if (c) params.push(`core=${encodeURIComponent(c)}`);
+
+  if (params.length > 0) {
+    url += `?${params.join("&")}`;
+  }
+
+  console.log("url:", url);
+
+  const res = await fetch(url);
+  return res.json();
+}
