@@ -1,5 +1,6 @@
+import Header from "../components/Header";
 import { getAncestries } from "@/lib/api";
-import SearchBar from "../SearchBar";
+import SearchBar from "../components/SearchBar";
 import AncestryList from "./AncestryList";
 
 export default async function Page({ searchParams }) {
@@ -9,15 +10,16 @@ export default async function Page({ searchParams }) {
   const ancestries = await getAncestries(q);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0f1c] to-[#05070d] text-gray-200 p-6">
-      
-      <h1 className="text-3xl font-bold mb-4 text-blue-300">
-        Ancestries
-      </h1>
-
-      <SearchBar initialValue={q} />
-
-      <AncestryList ancestries={ancestries} />
-    </div>
-  );
+      <div className="min-h-screen bg-gradient-to-b from-[#0a0f1c] to-[#05070d] text-gray-200">
+        <Header />
+  
+        <div className="p-6">
+          <h1 className="text-3xl font-bold mb-4 text-blue-300">Ancestries</h1>
+  
+          <SearchBar initialValue={q} />
+  
+          <AncestryList ancestries={ancestries} />
+        </div>
+      </div>
+    );
 }
