@@ -12,6 +12,7 @@ export default function Header() {
     { label: "Edges", href: "/edges" },
     { label: "Hindrances", href: "/hindrances" },
     { label: "Skills", href: "/skills" },
+    { label: "Gear", href: "/gear" },
   ];
 
   return (

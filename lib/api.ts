@@ -78,3 +78,23 @@ export async function getSkills(q, l, c) {
   const res = await fetch(url);
   return res.json();
 }
+
+export async function getGear(q, t, max_c, max_w) {
+  let url = `${API_URL}/gear`;
+
+  const params = [];
+
+  if (q) params.push(`q=${encodeURIComponent(q)}`);
+  if (t) params.push(`t=${encodeURIComponent(t)}`);
+  if (max_c) params.push(`max_c=${encodeURIComponent(max_c)}`);
+  if (max_w) params.push(`max_w=${encodeURIComponent(max_w)}`);
+
+  if (params.length > 0) {
+    url += `?${params.join("&")}`;
+  }
+
+  console.log("url:", url);
+
+  const res = await fetch(url);
+  return res.json();
+}
