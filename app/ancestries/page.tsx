@@ -3,7 +3,11 @@ import { getAncestries } from "@/lib/api";
 import SearchBar from "../components/SearchBar";
 import AncestryList from "./AncestryList";
 
-export default async function Page({ searchParams }) {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: { q?: string };
+}) {
   const params = await searchParams;
   const q = params?.q || "";
 
