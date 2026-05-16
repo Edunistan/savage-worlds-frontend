@@ -13,6 +13,8 @@ export default function Header() {
     { label: "Hindrances", href: "/hindrances" },
     { label: "Skills", href: "/skills" },
     { label: "Gear", href: "/gear" },
+    { label: "Powers", href: "/powers" },
+    { label: "Arcane Backgrounds", href: "/backgrounds" }
   ];
 
   return (
