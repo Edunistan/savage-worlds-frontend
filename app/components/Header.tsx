@@ -14,7 +14,8 @@ export default function Header() {
     { label: "Skills", href: "/skills" },
     { label: "Gear", href: "/gear" },
     { label: "Powers", href: "/powers" },
-    { label: "Arcane Backgrounds", href: "/backgrounds" }
+    { label: "Arcane Backgrounds", href: "/backgrounds" },
+    { label: "Powered by Backano's Technology™" }
   ];
 
   return (
