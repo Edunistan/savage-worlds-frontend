@@ -11,7 +11,7 @@ export async function getAncestries(q) {
 }
 
 export async function getAncestry(id: string | number) {
-  const url = `api/ancestries/${id}`
+  const url = `${API_URL}/ancestries/${id}`
   const res = await fetch(url);
 
   const data = await res.json();
@@ -52,7 +52,7 @@ export async function getPowers(q, r, pp) {
 }
 
 export async function getPower(id: string | number) {
-  const url = `api/powers/${id}`
+  const url = `${API_URL}/powers/${id}`
   const res = await fetch(url);
 
   const data = await res.json();
@@ -141,7 +141,7 @@ export async function getGear(q, t, max_c, max_w) {
 }
 
 export async function getItem(id: string | number) {
-  const url = `api/gear/${id}`
+  const url = `${API_URL}/gear/${id}`
   const res = await fetch(url);
 
   const data = await res.json();
