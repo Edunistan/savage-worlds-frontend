@@ -113,7 +113,7 @@ export default function AncestryList({ ancestries }: { ancestries: Ancestry[] })
                     <p className="mb-4">{data.ancestry.description}</p>
 
                     {/* ABILITIES */}
-                    {data.abilities?.length > 0 ? (
+                    {data.abilities && data.abilities.length > 0 ? (
                       <div>
                         <h3 className="text-blue-300 font-semibold mb-3">
                           Abilities
