@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Header from "../components/Header";
 import { getBackgrounds } from "@/lib/api";
 import ArcaneBackgroundList from "./BackgroundsList";
@@ -18,3 +19,5 @@ export default async function Page({ }) {
       </div>
     );
 }
+
+export const revalidate = 0;
