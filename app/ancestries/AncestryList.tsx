@@ -16,9 +16,11 @@ type Ability = {
 };
 
 type AncestryDetail = {
-  id: number;
-  name: string;
-  description: string;
+  ancestry: {
+    id: number;
+    name: string;
+    description: string;
+  };
   abilities?: Ability[];
 };
 
